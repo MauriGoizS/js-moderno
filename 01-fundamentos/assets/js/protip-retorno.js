@@ -1,4 +1,4 @@
-const crearPersona = ( nombre, apellido )  => ({nombre, apellido}); /* Los ´parésis indica a js que todo lo que este dentro de los parésis como un objeto */
+const crearPersona = ( nombre, apellido )  => ({nombre, apellido}); /* Los paréntesis indica a js que todo lo que este dentro de los parésis como un objeto */
 
 const persona = crearPersona( 'Mauricio', 'Goiz');
 console.log( persona );
