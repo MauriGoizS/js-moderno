@@ -50,4 +50,24 @@ const pedirCarta = () => {
     pedirCarta();
 } */
 
-pedirCarta();
+/* pedirCarta(); */
+
+const valorCarta = (carta) => {
+    const valor = carta.slice(0, -1);
+    return ( isNaN( valor ) ) ?
+        ( valor === 'A' ) ? 11 : 10
+        : valor * 1;
+    /* let puntos = 0; */
+
+    /* if (isNaN(valor)) {
+        puntos = ( valor === 'A') ? 11 : 10;
+    } else {
+        console.log('Es número');
+        puntos = valor * 1;
+    }
+    console.log(puntos); */
+}
+
+const valor = valorCarta( pedirCarta() );
+console.log({ valor })
+
