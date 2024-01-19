@@ -12,7 +12,10 @@ let puntosJugador = 0,
 
 // Referencias del HTML
 const btnPedir = document.querySelector('#btnPedir');
+const btnDetener = document.querySelector('#btnDetener');
+
 const divCartasJugador = document.querySelector('#jugador-cartas');
+const divCartasComputadora = document.querySelector('#computadora-cartas');
 const puntosHTML = document.querySelectorAll('small');
 
 
@@ -80,6 +83,32 @@ const valorCarta = (carta) => {
 /* const valor = valorCarta( pedirCarta() );
 console.log({ valor }) */
 
+const turnoComputadora = ( puntosMinimos ) => {
+
+    do {
+        const carta = pedirCarta();
+        puntosComputadora = puntosComputadora + valorCarta( carta ); 
+        puntosHTML[1].innerText = puntosComputadora;
+        
+        const imgCarta = document.createElement('img');
+        imgCarta.src = `assets/cartas/${ carta }.png`;
+        imgCarta.classList.add('carta');
+        divCartasComputadora.append( imgCarta);
+
+        if (puntosMinimos > 21) {
+            break;
+        }
+
+    } while( (puntosComputadora < puntosMinimos) && (puntosMinimos <= 21) );
+    
+
+
+}
+
+
+
+
+
 
 
 // Eventos
@@ -87,7 +116,7 @@ console.log({ valor }) */
 btnPedir.addEventListener('click', () => {
     const carta = pedirCarta();
     puntosJugador = puntosJugador + valorCarta( carta ); 
-    console.log( puntosJugador );
+    /* console.log( puntosJugador ); */
 
 
     /* const puntosHTML = document.querySelector('small').innerHTML = puntosJugador; */
@@ -105,8 +134,21 @@ btnPedir.addEventListener('click', () => {
     if ( puntosJugador > 21 ) {
         console.warn('Lo siento, perdiste');
         btnPedir.disabled = true;
+        btnDetener.disabled = true
+        turnoComputadora( puntosJugador );
+
     } else if ( puntosJugador === 21) {
         console.warn('21, Genial');
         btnPedir.disabled = true;
+        btnDetener.disabled = true
     }
 });
+
+
+
+btnDetener.addEventListener('click', () => {
+    btnDetener.disabled = true;
+    btnPedir.disabled = true;
+
+    turnoComputadora( puntosJugador );
+})
