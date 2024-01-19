@@ -12,6 +12,7 @@ let puntosJugador = 0,
 
 // Referencias del HTML
 const btnPedir = document.querySelector('#btnPedir');
+const divCartasJugador = document.querySelector('#jugador-cartas');
 const puntosHTML = document.querySelectorAll('small');
 
 
@@ -91,6 +92,21 @@ btnPedir.addEventListener('click', () => {
 
     /* const puntosHTML = document.querySelector('small').innerHTML = puntosJugador; */
     /* puntosHTML */ 
-
     puntosHTML[0].innerText = puntosJugador;
+
+
+    // <img class="carta" src="assets/cartas/10D.png" alt="carta">
+    const imgCarta = document.createElement('img');
+    imgCarta.src = `assets/cartas/${ carta }.png`;
+    imgCarta.classList.add('carta');
+
+    divCartasJugador.append( imgCarta);
+
+    if ( puntosJugador > 21 ) {
+        console.warn('Lo siento, perdiste');
+        btnPedir.disabled = true;
+    } else if ( puntosJugador === 21) {
+        console.warn('21, Genial');
+        btnPedir.disabled = true;
+    }
 });
