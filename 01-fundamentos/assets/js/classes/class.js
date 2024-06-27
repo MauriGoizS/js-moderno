@@ -3,11 +3,20 @@ class Persona {
     nombre = '';
     codigo = '';
     frase  = '';
+    comida = '';
 
     constructor( nombre = 'Sin nombre', codigo = 'Sin código', frase = 'Sin frase') {
         this.nombre = nombre;
         this.codigo = codigo;
         this.frase  = frase;
+    }
+
+    set setComidaFavorita( comida ) {
+        this.comida = comida.toUpperCase();
+    }
+
+    get getComidadFavorita() {
+        return `La comida favorita de ${ this.nombre } es ${ this.comida }`;
     }
 
     quienSoy() {
@@ -28,4 +37,10 @@ console.log( ironman );
 // spiderman.quienSoy();
 // ironman.quienSoy();
 spiderman.miFrase();
-ironman.miFrase();
+// ironman.miFrase();
+
+spiderman.setComidaFavorita = 'El pie de nuez de la tía May';
+// spiderman.comida = 'Frijoles';
+
+console.log( spiderman.getComidadFavorita );
+console.log( spiderman );
