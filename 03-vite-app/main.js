@@ -1,7 +1,7 @@
-// import './style.css';
-// import javascriptLogo from './javascript.svg';
-// import viteLogo from '/vite.svg';
-// import { setupCounter } from './counter.js';
+import './style.css';
+import javascriptLogo from './javascript.svg';
+import viteLogo from '/vite.svg';
+import { setupCounter } from './counter.js';
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -11,7 +11,7 @@ document.querySelector('#app').innerHTML = `
     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
       Documentation
     </a>
-    <h1>Hello Vite!</h1>
+    <h1>¡¡¡Hola mundo!!!</h1>
     <div class="card">
       <button id="counter" type="button">Hola</button>
     </div>
