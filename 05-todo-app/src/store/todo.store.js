@@ -12,6 +12,8 @@ const state = {
         new Todo('Piedra del alma'),
         new Todo('Piedra del infinito'),
         new Todo('Piedra del tiempo'),
+        new Todo('Piedra del poder'),
+        new Todo('Piedra del espacio'),
     ],
     
     filter: Filters.All,
@@ -20,7 +22,7 @@ const state = {
 
 const initStore = () => {
     console.log(state);
-    console.log('InitStore ');
+    console.log('InitStore 🥑');
 }
 
 const loadStore = () => {
@@ -60,7 +62,16 @@ const addTodo = ( description ) => {
  * @param {String} todId 
  */
 const toggleTodo = ( todoId ) => {
-    throw new Error('Not implemented');
+    
+    state.todos = state.todos.map( todo => {
+        if ( todoId === todoId ) {
+            todo.done = !todo.done;
+        }
+
+        return todo;
+
+    })
+
 }
 
 const deleteTodo = ( todoId ) => {
