@@ -10,7 +10,13 @@ export const callbacksComponent = ( element ) => {
     console.log( 'callbacksComponent' );
 
     const id = '5d86371f233c9f2425f16916';
-    findHero( id, ( hero ) => {
+    findHero( id, ( error, hero ) => {
+        // element.innerHTML = hero?.name  || 'No existe heroe';
+
+        if( error ) {
+            element.innerHTML = error;
+            return;
+        }
 
         element.innerHTML = hero.name;
 
@@ -21,11 +27,16 @@ export const callbacksComponent = ( element ) => {
 /**
  * 
  * @param {String} id 
- * @param { (hero: Object)=> void } callback 
+ * @param { ( error: String|Null, hero: Object)=> void } callback 
  */
 const findHero = ( id, callback ) => {
 
     const hero = heroes.find( hero => hero.id === id);
 
-    callback( hero );
+    if ( !hero ) {
+        callback( `Hero with id ${ id } not found` );
+        return;  // undefined;
+    }
+
+    callback( null, hero );
 }
