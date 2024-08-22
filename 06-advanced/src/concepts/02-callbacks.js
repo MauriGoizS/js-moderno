@@ -9,8 +9,10 @@ export const callbacksComponent = ( element ) => {
 
     console.log( 'callbacksComponent' );
 
-    const id = '5d86371f233c9f2425f16916';
-    findHero( id, ( error, hero ) => {
+    const id1 = '5d86371f233c9f2425f16916';
+    const id2 = '5d86371f1efebc31def272e2';
+
+    findHero( id1, ( error, hero1 ) => {
         // element.innerHTML = hero?.name  || 'No existe heroe';
 
         if( error ) {
@@ -18,7 +20,16 @@ export const callbacksComponent = ( element ) => {
             return;
         }
 
-        element.innerHTML = hero.name;
+        findHero( id2, ( error, hero2 ) => {           
+
+            if( error ) {
+                element.innerHTML = error;
+                return;
+            }
+
+            element.innerHTML =`${hero1.name} / ${hero2.name}`;
+
+        })
 
     });
 
