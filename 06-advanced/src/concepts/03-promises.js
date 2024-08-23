@@ -6,8 +6,23 @@ import { heroes } from "../data/heroes";
  */
 export const promisesComponent = ( element ) => {
 
-    console.log( 'promisesComponent' );
+    const renderHero = ( hero ) => {
+        element.innerHTML = hero.name;
+    }
 
+    const renderError = ( error ) => {
+        element.innerHTML = `
+            <h1> Error: </h1>
+            <h3> ${ error } </h3>
+        `;
+    }
+
+    const id1 = '5d86371f2343e37870b91ef1'
+    const id2 = '5d86371fd55e2e2a30fe1cc3'
+
+    findHero( id1 )
+        .then( renderHero )
+        .catch( error => renderError( error ) );
 }
 
 
@@ -26,7 +41,7 @@ const findHero = ( id ) => {
             return;
         }
 
-        return( `Hero with id ${ id } not found` );
+        reject( `Hero with id ${ id } not found` );
 
     });
 }
