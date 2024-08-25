@@ -1,6 +1,6 @@
-/* .hide-modal {
-    display: none;
-} */
+.hide-modal {
+    display: none !important;
+}
 
 .modal-container {
     position: fixed;
