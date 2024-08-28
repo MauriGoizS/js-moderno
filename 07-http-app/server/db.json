@@ -2,8 +2,8 @@
   "users": [
     {
       "id": "1",
-      "isActive": false,
-      "balance": 1397.32,
+      "isActive": true,
+      "balance": 1397.32111,
       "avatar": "http://placehold.it/32x32",
       "first_name": "Ryan",
       "last_name": "Kent",
@@ -12,7 +12,7 @@
     {
       "id": "2",
       "isActive": true,
-      "balance": 1120.82,
+      "balance": 1120.832,
       "avatar": "http://placehold.it/32x32",
       "first_name": "Francine",
       "last_name": "Ingram",
@@ -24,7 +24,7 @@
       "balance": 2010.88,
       "avatar": "http://placehold.it/32x32",
       "first_name": "Lee",
-      "last_name": "Howe",
+      "last_name": "Hower",
       "gender": "male"
     },
     {
