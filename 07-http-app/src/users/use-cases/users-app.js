@@ -15,7 +15,7 @@ import { saveUser } from "./save-user";
 export const UsersApp = async( element ) => {
 
     element.innerHTML = 'Loading...';
-    await  usersStore.loadNextPage();
+    await usersStore.loadNextPage();
     element.innerHTML = '';
 
     renderTable( element );
