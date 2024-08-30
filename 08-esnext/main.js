@@ -1,6 +1,7 @@
 import './style.css';
 import javascriptLogo from './javascript.svg';
 import viteLogo from '/vite.svg';
+// import './01-arrays/arrays-clone.js';
 import './01-arrays/arrays-with.js';
 
 document.querySelector('#app').innerHTML = `
